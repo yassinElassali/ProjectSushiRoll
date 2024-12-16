@@ -1,0 +1,15 @@
+<div *ngIf="errorMessage; else animeList" class="error">
+    {{ errorMessage }}
+  </div>
+  
+  <ng-template #animeList>
+    <div class="anime-slider">
+      <div *ngFor="let anime of animes" class="anime-card">
+        <img [src]="anime.images.jpg.image_url" [alt]="anime.title" />
+        <h3>{{ anime.title }}</h3>
+        <p>Episodes: {{ anime.episodes }}</p>
+        <p>Popularity: {{ anime.popularity }}</p>
+      </div>
+    </div>
+  </ng-template>
+  

@@ -1,0 +1,15 @@
+<div *ngIf="errorMessage; else mangaList" class="error">
+    {{ errorMessage }}
+  </div>
+  
+  <ng-template #mangaList>
+    <div class="manga-slider">
+      <div *ngFor="let manga of mangas" class="manga-card">
+        <img [src]="manga.images.jpg.image_url" [alt]="manga.title" />
+        <h3>{{ manga.title }}</h3>
+        <p>Volumes: {{ manga.volumes }}</p>
+        <p>Popularity: {{ manga.popularity }}</p>
+      </div>
+    </div>
+  </ng-template>
+  
