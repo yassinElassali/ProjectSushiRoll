@@ -1,0 +1,9 @@
+<h1 class='container'>Ricerca Anime</h1>
+
+<app-search-bar (onUpdateQuery)='searchAnime($event)' />
+
+<div class="container">
+@for (result of results; track result.id) {
+    <app-anime-search-result [result]='result' />
+}
+</div>

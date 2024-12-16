@@ -1,0 +1,9 @@
+<h1 class='container'>Ricerca Manga</h1>
+
+<app-search-bar (onUpdateQuery)='searchManga($event)' />
+
+<div class="container">
+@for (result of results; track result.id) {
+    <app-manga-search-result [result]='result' />
+}
+</div>
